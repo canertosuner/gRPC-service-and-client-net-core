@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option csharp_namespace = "RefundService";
+
+package Refund;
+
+service RefundService {
+rpc NotifyCustomer (NotifyRequest) returns (stream NotifyReply){}
+}
+
+message NotifyRequest {
+}
+
+message NotifyReply {
+	string orderId = 1;
+}
